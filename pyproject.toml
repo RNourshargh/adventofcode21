@@ -2,12 +2,7 @@
 name = "Advent of Code"
 version = "0.1.0"
 description = "Advent Calendar things"
-authors = ["Oxford Ionics"]
-
-[[tool.poetry.source]]
-name = "oxionics"
-url = "http://pypi.oxionics.com:3141/oiuser/oxionics/+simple/"
-default = true
+authors = ["Rustin"]
 
 [tool.poetry.dependencies]
 python = "~3.10"
@@ -41,4 +36,4 @@ fmt = "black ."
 fmt-test = "black --check ."
 test = "pytest"
 flake = "flake8 ."
-notebook = "jupyter lab --notebook-dir=${POE_ROOT}/2023"
+notebook = "jupyter lab --notebook-dir=${POE_ROOT}/notebooks"
