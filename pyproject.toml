@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "Advent of Code"
+version = "0.1.0"
+description = "Advent Calendar things"
+authors = ["Oxford Ionics"]
+
+[[tool.poetry.source]]
+name = "oxionics"
+url = "http://pypi.oxionics.com:3141/oiuser/oxionics/+simple/"
+default = true
+
+[tool.poetry.dependencies]
+python = "~3.10"
+numpy = "^1.22.0"
+matplotlib = "^3.5.1"
+scipy = "^1.7.3"
+jupyterlab = "^3.4.5"
+jupytext = "^1.14.1"
+qutip = "^4.7.1"
+seaborn = "^0.12.2"
+imageio = "^2.32.0"
+
+[tool.poetry.dev-dependencies]
+poethepoet = "^0.12.1"
+flake8 = "^4.0.1"
+pytest = "^6.2.5"
+black = {extras = ["jupyter"], version = "22.3.0"}
+pre-commit = "^2.17.0"
+
+[tool.lady_jessica]
+parent_branch = "parent_python_jupytext"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+pre-commit-install="pre-commit install"
+pre-commit-all="pre-commit run --all-files"
+fmt = "black ."
+fmt-test = "black --check ."
+test = "pytest"
+flake = "flake8 ."
+notebook = "jupyter lab --notebook-dir=${POE_ROOT}/2023"
